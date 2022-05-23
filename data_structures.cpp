@@ -103,6 +103,23 @@ namespace data_structures{
 		}
 	}
 
+	//Doesn't work properly 
+	template<typename T>
+	void qsort(int first, int last, T& array){
+		if(first < last){
+			int mid = first + last / 2;
+			int i = first;
+			int j = last;
+			while(i <= j){
+				while(array[i] < array[mid]) i++;
+				while(array[j] > array[mid]) j--;
+				if(i <= j) std::swap(array[i++], array[j--]);
+			}
+			qsort(first, j, array);
+			qsort(i, last, array);
+		} 
+	}
+
 
 
 } // data_structures

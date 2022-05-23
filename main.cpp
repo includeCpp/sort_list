@@ -53,4 +53,12 @@ int main(){
 	}
 	std::cout << std::endl;
 	std::cout << std::endl;
+	std::cout << "Quick sort" << std::endl;
+	my_vec = {9, 12, 10, 8, 11, 3, 6, 4, 2, 5, 1, 7};
+	data_structures::qsort(0, 12, my_vec);
+	for(int i = 0; i < my_vec.size(); ++i){
+		std::cout << my_vec[i] << " ";
+	}
+	std::cout << std::endl;
+	std::cout << std::endl;
 }
