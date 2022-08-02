@@ -3,6 +3,7 @@
 
 #include<algorithm>
 #include<iostream>
+#include<vector>
 
 namespace data_structures{
 	template<typename T>
@@ -103,21 +104,20 @@ namespace data_structures{
 		}
 	}
 
-	//Doesn't work properly 
 	template<typename T>
 	void qsort(int first, int last, T& array){
 		if(first < last){
-			int mid = first + last / 2;
+			auto mid = array[(first + last) / 2];
 			int i = first;
 			int j = last;
 			while(i <= j){
-				while(array[i] < array[mid]) i++;
-				while(array[j] > array[mid]) j--;
+				while(array[i] < mid) i++;
+				while(array[j] > mid) j--;
 				if(i <= j) std::swap(array[i++], array[j--]);
 			}
 			qsort(first, j, array);
 			qsort(i, last, array);
-		} 
+		}	
 	}
 
 
