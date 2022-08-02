@@ -5,6 +5,7 @@
 #include <vector>
 
 int main(){
+	//list of sorts
 	std::cout << "\nBubble sort" << std::endl; 
 	std::vector<int> my_vec = {3, 5, 1, 2, 0, 4, 9, 6, 8, 7};
 	data_structures::bsort(my_vec);
