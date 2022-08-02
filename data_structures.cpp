@@ -104,6 +104,7 @@ namespace data_structures{
 		}
 	}
 
+	//Works as planned
 	template<typename T>
 	void qsort(int first, int last, T& array){
 		if(first < last){
