@@ -136,7 +136,7 @@ namespace data_structures{
 			p = pow(10, i);
 			for(int j = 0; j < size; j++){
 				temp = arr[j] % m;
-				index = temp % p;
+				index = temp / p;
 				pocket[index].push_back(arr[j]);
 			}
 			count = 0;
