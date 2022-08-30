@@ -11,14 +11,14 @@ namespace sorting_algorithms{
 	struct cmp{
 		template<typename T, typename Q>
 		bool operator()(T lhs, Q rhs){
-			return lhs > rhs;
+			return lhs < rhs;
 		}
 	};
 
 	struct cmp_2{
 		template<typename T, typename Q>
 		bool operator()(T lhs, Q rhs){
-			return lhs < rhs;
+			return lhs > rhs;
 		}
 	};
 
