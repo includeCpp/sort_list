@@ -163,9 +163,6 @@ namespace sorting_algorithms{
 		}
 	}
 
-
-
 } // sorting_algorithms
-
 
 #endif // __SORTING_ALGORITHMS_HPP__
