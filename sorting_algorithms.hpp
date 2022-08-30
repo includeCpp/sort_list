@@ -15,13 +15,6 @@ namespace sorting_algorithms{
 		}
 	};
 
-	struct cmp_2{
-		template<typename T, typename Q>
-		bool operator()(T lhs, Q rhs){
-			return lhs > rhs;
-		}
-	};
-
 	template<typename T, typename Comp = cmp>
 	void bsort(T& array){   			
 		Comp cmp; 	
@@ -127,17 +120,16 @@ namespace sorting_algorithms{
 		}
 	}
 
-	template<typename T, typename Comp = cmp, typename Comp_2 = cmp_2>
+	template<typename T, typename Comp = cmp>
 	void qsort(size_t first, size_t last, T& array){ 
-		Comp cmp;
-		Comp_2 cmp_2;        
+		Comp cmp;        
 		if(first < last){
 			auto mid = array[(first + last) / 2]; 
 			int i = first;
 			int j = last;
 			while(i <= j){
 				while(cmp(array[i], mid)) i++;
-				while(cmp_2(array[j], mid)) j--;
+				while(cmp(mid, array[j])) j--;
 				if(i <= j) std::swap(array[i++], array[j--]);
 			}
 			if(j > 0) qsort(first, j, array);

@@ -11,13 +11,6 @@ struct cmp{
 		}
 };
 
-struct cmp_2{
-		template<typename T, typename Q>
-		bool operator()(T lhs, Q rhs){
-			return lhs > rhs;
-		}
-};
-
 int main(){
 	//list of sorts
 	std::cout << "\nBubble sort" << std::endl; 
@@ -70,7 +63,7 @@ int main(){
 	std::cout << std::endl;
 	std::cout << "Quick sort" << std::endl;
 	my_vec = {9, 12, 10, 8, 11, 3, 6, 4, 2, 5, 1, 7, 8, 89, 45, 55};
-	sorting_algorithms::qsort<std::vector<int>, cmp, cmp_2>(0, 16, my_vec); //works without third template argument
+	sorting_algorithms::qsort<std::vector<int>, cmp>(0, 16, my_vec);
 	for(int i = 0; i < my_vec.size(); ++i){
 		std::cout << my_vec[i] << " ";
 	}
