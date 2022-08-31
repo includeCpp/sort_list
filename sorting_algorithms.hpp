@@ -16,7 +16,7 @@ namespace sorting_algorithms{
 	};
 
 	template<typename T, typename Comp = cmp>
-	void bsort(T& array){   			
+	void bsort(T& array){   	                  //O(n^2)		
 		Comp cmp; 	
 		for(size_t i = 0; i < array.size(); ++i){                   
 			for(size_t j = 0; j < array.size() - 1; ++j){
@@ -29,7 +29,7 @@ namespace sorting_algorithms{
 
 	//Sometimes this sort algorithm doesn't work properly. TODO fix.
 	template<typename T, typename Comp = cmp>
-	void shake_sort(T& array){
+	void shake_sort(T& array){                    //O(n^2)
 		Comp cmp;
 		size_t leftMark = 0;
 		size_t rightMark = array.size() - 1;                        
@@ -51,7 +51,7 @@ namespace sorting_algorithms{
 	}
 
 	template<typename T, typename Comp = cmp>
-	void comb_sort(T& array){  
+	void comb_sort(T& array){                      //O(n log n)
 		Comp cmp;                                   
 		size_t n = array.size() - 1;
 		size_t s = n;
@@ -85,7 +85,7 @@ namespace sorting_algorithms{
 	}
 
 	template<typename T, typename Comp = cmp>
-	void selection_sort(T& array){   //
+	void selection_sort(T& array){                   //O(n^2)
 		Comp cmp;                               
 		size_t min = 0;
 		size_t max = array.size();
@@ -100,7 +100,7 @@ namespace sorting_algorithms{
 	}
 
 	template<typename T, typename Comp = cmp>
-	void double_selection_sort(T& array){  
+	void double_selection_sort(T& array){             //O(n^2)
 		Comp cmp;                        
 		size_t min = 0;
 		size_t max = array.size();
@@ -120,8 +120,12 @@ namespace sorting_algorithms{
 		}
 	}
 
+	//-----------------------------------------------------------------------------------------------------------------
+	//                                        Radix & Quick sorts for Lesta Studio
+	//-----------------------------------------------------------------------------------------------------------------
+
 	template<typename T, typename Comp = cmp>
-	void qsort(size_t first, size_t last, T& array){ 
+	void qsort(size_t first, size_t last, T& array){  //O(n log n)
 		Comp cmp;        
 		if(first < last){
 			auto mid = array[(first + last) / 2]; 
@@ -137,7 +141,7 @@ namespace sorting_algorithms{
 		}	
 	}
 
-	template<typename T>
+	template<typename T>                              //O(nd)
 	void radix_sort(size_t max, size_t size,  std::vector<T>& arr){      
 		size_t i, j, m;
 		size_t p = 1; 
