@@ -169,22 +169,34 @@ namespace sorting_algorithms{
 
 	template<typename T>
 	void even_odd(T& array){
-		int size = array.size();
-		int half = size / 2;
+		int j = array.size();
+		//int half = j / 2;
 		int even_count = 0;
-		for(int i = 0; i < half; i++){
+		for(int i = 0; i < j; i++){
+			std::cout << array[i] << " ";
+		}
+		std::cout << std::endl;
+		for(int i = 0; i < j; i++){
 			while(array[i] % 2 == 0){
 				i++;
 				even_count++;
 			}
-			while(array[size - 1] % 2 != 0){
-				size--;
+			while(array[j - 1] % 2 != 0){
+				j--;
 			}
-			std::swap(array[i], array[size - 1]);
+			if(i < j){
+				std::swap(array[i], array[j - 1]);
+				even_count++;
+			}
 		}
-		size = array.size();
-		qsort(0, even_count, array);
-		qsort(even_count + 1, size - 1, array);
+		int size = array.size();
+		std::cout << even_count << std::endl;
+		for(int i = 0; i < size; i++){
+			std::cout << array[i] << " ";
+		}
+		std::cout << std::endl;
+			qsort(0, even_count - 1, array);
+			qsort(even_count, size - 1, array);
 	}
 
 } // sorting_algorithms
