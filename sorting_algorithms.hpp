@@ -167,6 +167,26 @@ namespace sorting_algorithms{
 		}
 	}
 
+	template<typename T>
+	void even_odd(T& array){
+		int size = array.size();
+		int half = size / 2;
+		int even_count = 0;
+		for(int i = 0; i < half; i++){
+			while(array[i] % 2 == 0){
+				i++;
+				even_count++;
+			}
+			while(array[size - 1] % 2 != 0){
+				size--;
+			}
+			std::swap(array[i], array[size - 1]);
+		}
+		size = array.size();
+		qsort(0, even_count, array);
+		qsort(even_count + 1, size - 1, array);
+	}
+
 } // sorting_algorithms
 
 #endif // __SORTING_ALGORITHMS_HPP__

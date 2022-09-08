@@ -77,6 +77,14 @@ int main(){
 	}
 	std::cout << std::endl;
 	std::cout << std::endl;
+	std::cout << "Even_odd sort" << std::endl;
+	my_vec = {9, 120, 10, 80, 113, 331, 6, 4, 25, 5, 13, 7};
+	sorting_algorithms::even_odd(my_vec);
+	for(int i = 0; i < my_vec.size(); ++i){
+		std::cout << my_vec[i] << " ";
+	}
+	std::cout << std::endl;
+	std::cout << std::endl;
 
 	return 0;
 }
