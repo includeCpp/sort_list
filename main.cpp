@@ -4,25 +4,6 @@
 #include <algorithm>
 #include <vector>
 
-template<typename T>
-void even_odd(T& array){
-	if(array.size() != 0){
-		auto j = array.end()--;
-		auto i = array.begin();
-		while(i != j){
-			if((*i) % 2 == 0){
-				i++;
-			} else{
-				if((*j) % 2 != 0){
-					j--;
-				} else{
-					std::swap(*i, *j);
-				}
-			}
-		}
-	}
-}
-
 struct user_cmp{
 		template<typename T, typename Q>
 		bool operator()(T lhs, Q rhs){
